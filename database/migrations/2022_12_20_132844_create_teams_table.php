@@ -18,8 +18,9 @@ return new class extends Migration
 
             $table->string('name');
             $table->timestamp('creation_date');
-            $table->decimal('score_average');
-            $table->integer('total_players');
+
+            $table->decimal('score_average')->nullable();
+            $table->integer('total_players')->nullable();
 
             $table->foreignID('sport_id')->constrained('sports')->onUpdate('cascade')->onDelete('cascade'); 
             $table->timestamps();
