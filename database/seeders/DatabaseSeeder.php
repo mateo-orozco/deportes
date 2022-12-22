@@ -18,7 +18,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            PermissionSeeder::class,
+        ]);
         User::factory(3)->create();
+        $admin=User::find(1);
+        $admin->assignRole('admin');
+        $coach=User::find(2);
+        $coach->assignRole('coach');
+        $player=User::find(3);
+        $player->assignRole('player');
         Sport::factory(5)->create();
         Team::factory(8)->create();
         Player::factory(15)->create();

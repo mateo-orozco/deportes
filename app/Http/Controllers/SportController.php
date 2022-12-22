@@ -16,6 +16,7 @@ class SportController extends Controller
         $sports = Sport::find($id);
       return $sports;
     }
+    
     public function create(Request $request){
         try{
             $request->validate([

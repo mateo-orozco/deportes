@@ -8,6 +8,7 @@ use App\Models\Team;
 class TeamController extends Controller
 {
     //
+
     public function index(){
         $teams = Team::all();
         return $teams;
@@ -16,6 +17,7 @@ class TeamController extends Controller
         $teams = Team::find($id);
         return $teams;
     }
+
     public function create(Request $request){
         try{
             $request->validate([
@@ -34,6 +36,7 @@ class TeamController extends Controller
         ]);
         return 'Equipo creado correctamente.';
     }
+    
     public function update(request $request,$id)
     {
         try{
